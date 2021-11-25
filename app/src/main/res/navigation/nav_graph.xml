@@ -11,12 +11,20 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            android:id="@+id/action_homeFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
     </fragment>
     <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.example.lykkehjul.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        android:id="@+id/gameFragment"
+        android:name="com.example.lykkehjul.GameFragment"
+        android:label="fragment_game"
+        tools:layout="@layout/fragment_game" >
+        <action
+            android:id="@+id/action_gameFragment_to_gameResultFragment"
+            app:destination="@id/gameResultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameResultFragment"
+        android:name="com.example.lykkehjul.GameResultFragment"
+        android:label="GameResultFragment" />
 </navigation>
