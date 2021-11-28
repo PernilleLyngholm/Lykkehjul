@@ -21,7 +21,7 @@
     <TextView
         android:id="@+id/textView_word_to_guess"
         android:layout_width="match_parent"
-        android:layout_height="262dp"
+        android:layout_height="200dp"
         android:background="@drawable/text_border_purple_bg"
         android:outlineAmbientShadowColor="@color/white"
         android:textColor="@color/white" />
@@ -32,27 +32,15 @@
         android:layout_height="36dp"
         android:layout_gravity="center"
         android:layout_marginTop="-18dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="12dp"
         android:background="@drawable/text_border_blue_bg"
         android:textColor="@color/white" />
 
-    <TextView
-        android:id="@+id/textView_result_of_spin_title"
-        android:layout_width="match_parent"
-        android:layout_height="36dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="-20dp"
-        android:background="@null"
-        android:text="Result of spin"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="12sp" />
 
     <TextView
         android:id="@+id/textView_result_of_spin"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="32dp"
         android:background="@drawable/text_border_purple_bg"
         android:textColor="@color/white" />
 
@@ -68,35 +56,307 @@
         android:textColor="@color/white"
         app:cornerRadius="10dp" />
 
-    <TextView
-        android:id="@+id/textView_guess_title"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lettersLayout"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="-20dp"
-        android:background="@null"
-        android:text="Please input a letter and press guess"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="12sp" />
+        android:layout_height="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf= "@id/button_spin">
 
-    <EditText
-        android:id="@+id/editText_input_letter"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/text_border_purple_bg"
-        android:textColor="@color/white" />
+        <androidx.constraintlayout.helper.widget.Flow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            app:constraint_referenced_ids="a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z"
+            app:flow_wrapMode="aligned" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/button_guess"
-        android:layout_width="100dp"
-        android:layout_height="48dp"
-        android:layout_gravity="center_horizontal"
-        android:backgroundTint="@color/blue_light"
-        android:text="Guess"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        app:cornerRadius="10dp" />
+        <TextView
+            android:id="@+id/a"
+            android:layout_width="48dp"
+            android:layout_height="36dp"
+            android:textAlignment="center"
+            android:background="@drawable/text_border_purple_bg"
+            android:paddingHorizontal="10dp"
+            android:text="A"
+            android:textColor="@color/white"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/b"
+            android:layout_width="48dp"
+            android:layout_height="36dp"
+            android:textAlignment="center"
+            android:background="@drawable/text_border_purple_bg"
+            android:paddingHorizontal="10dp"
+            android:text="B"
+            android:textColor="@color/white"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/c"
+            android:layout_width="48dp"
+            android:layout_height="36dp"
+            android:textAlignment="center"
+            android:background="@drawable/text_border_purple_bg"
+            android:paddingHorizontal="10dp"
+            android:text="C"
+            android:textColor="@color/white"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/d"
+            android:layout_width="48dp"
+            android:layout_height="36dp"
+            android:textAlignment="center"
+            android:background="@drawable/text_border_purple_bg"
+            android:paddingHorizontal="10dp"
+            android:text="D"
+            android:textColor="@color/white"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/e"
+            android:layout_width="48dp"
+            android:layout_height="36dp"
+            android:textAlignment="center"
+            android:background="@drawable/text_border_purple_bg"
+            android:paddingHorizontal="10dp"
+            android:text="E"
+            android:textColor="@color/white"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/f"
+            android:layout_width="48dp"
+            android:layout_height="36dp"
+            android:textAlignment="center"
+            android:background="@drawable/text_border_purple_bg"
+            android:paddingHorizontal="10dp"
+            android:text="F"
+            android:textColor="@color/white"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/g"
+            android:layout_width="48dp"
+            android:layout_height="36dp"
+            android:textAlignment="center"
+            android:background="@drawable/text_border_purple_bg"
+            android:paddingHorizontal="10dp"
+            android:text="G"
+            android:textColor="@color/white"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/h"
+            android:layout_width="48dp"
+            android:layout_height="36dp"
+            android:textAlignment="center"
+            android:background="@drawable/text_border_purple_bg"
+            android:paddingHorizontal="10dp"
+            android:text="H"
+            android:textColor="@color/white"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/i"
+            android:layout_width="48dp"
+            android:layout_height="36dp"
+            android:textAlignment="center"
+            android:background="@drawable/text_border_purple_bg"
+            android:paddingHorizontal="10dp"
+            android:text="I"
+            android:textColor="@color/white"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/j"
+            android:layout_width="48dp"
+            android:layout_height="36dp"
+            android:textAlignment="center"
+            android:background="@drawable/text_border_purple_bg"
+            android:paddingHorizontal="10dp"
+            android:text="J"
+            android:textColor="@color/white"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/k"
+            android:layout_width="48dp"
+            android:layout_height="36dp"
+            android:textAlignment="center"
+            android:background="@drawable/text_border_purple_bg"
+            android:paddingHorizontal="10dp"
+            android:text="K"
+            android:textColor="@color/white"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/l"
+            android:layout_width="48dp"
+            android:layout_height="36dp"
+            android:textAlignment="center"
+            android:background="@drawable/text_border_purple_bg"
+            android:paddingHorizontal="10dp"
+            android:text="L"
+            android:textColor="@color/white"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/m"
+            android:layout_width="48dp"
+            android:layout_height="36dp"
+            android:textAlignment="center"
+            android:background="@drawable/text_border_purple_bg"
+            android:paddingHorizontal="10dp"
+            android:text="M"
+            android:textColor="@color/white"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/n"
+            android:layout_width="48dp"
+            android:layout_height="36dp"
+            android:textAlignment="center"
+            android:background="@drawable/text_border_purple_bg"
+            android:paddingHorizontal="10dp"
+            android:text="N"
+            android:textColor="@color/white"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/o"
+            android:layout_width="48dp"
+            android:layout_height="36dp"
+            android:textAlignment="center"
+            android:background="@drawable/text_border_purple_bg"
+            android:paddingHorizontal="10dp"
+            android:text="O"
+            android:textColor="@color/white"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/p"
+            android:layout_width="48dp"
+            android:layout_height="36dp"
+            android:textAlignment="center"
+            android:background="@drawable/text_border_purple_bg"
+            android:paddingHorizontal="10dp"
+            android:text="P"
+            android:textColor="@color/white"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/q"
+            android:layout_width="48dp"
+            android:layout_height="36dp"
+            android:textAlignment="center"
+            android:background="@drawable/text_border_purple_bg"
+            android:paddingHorizontal="10dp"
+            android:text="Q"
+            android:textColor="@color/white"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/r"
+            android:layout_width="48dp"
+            android:layout_height="36dp"
+            android:textAlignment="center"
+            android:background="@drawable/text_border_purple_bg"
+            android:paddingHorizontal="10dp"
+            android:text="R"
+            android:textColor="@color/white"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/s"
+            android:layout_width="48dp"
+            android:layout_height="36dp"
+            android:textAlignment="center"
+            android:background="@drawable/text_border_purple_bg"
+            android:paddingHorizontal="10dp"
+            android:text="S"
+            android:textColor="@color/white"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/t"
+            android:layout_width="48dp"
+            android:layout_height="36dp"
+            android:textAlignment="center"
+            android:background="@drawable/text_border_purple_bg"
+            android:paddingHorizontal="10dp"
+            android:text="T"
+            android:textColor="@color/white"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/u"
+            android:layout_width="48dp"
+            android:layout_height="36dp"
+            android:textAlignment="center"
+            android:background="@drawable/text_border_purple_bg"
+            android:paddingHorizontal="10dp"
+            android:text="U"
+            android:textColor="@color/white"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/v"
+            android:layout_width="48dp"
+            android:layout_height="36dp"
+            android:textAlignment="center"
+            android:background="@drawable/text_border_purple_bg"
+            android:paddingHorizontal="10dp"
+            android:text="V"
+            android:textColor="@color/white"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/w"
+            android:layout_width="48dp"
+            android:layout_height="36dp"
+            android:textAlignment="center"
+            android:background="@drawable/text_border_purple_bg"
+            android:paddingHorizontal="10dp"
+            android:text="W"
+            android:textColor="@color/white"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/x"
+            android:layout_width="48dp"
+            android:layout_height="36dp"
+            android:textAlignment="center"
+            android:background="@drawable/text_border_purple_bg"
+            android:paddingHorizontal="10dp"
+            android:text="X"
+            android:textColor="@color/white"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/y"
+            android:layout_width="48dp"
+            android:layout_height="36dp"
+            android:textAlignment="center"
+            android:background="@drawable/text_border_purple_bg"
+            android:paddingHorizontal="10dp"
+            android:text="Y"
+            android:textColor="@color/white"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/z"
+            android:layout_width="48dp"
+            android:layout_height="36dp"
+            android:textAlignment="center"
+            android:background="@drawable/text_border_purple_bg"
+            android:paddingHorizontal="10dp"
+            android:text="Z"
+            android:textColor="@color/white"
+            android:textSize="24dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </LinearLayout>
