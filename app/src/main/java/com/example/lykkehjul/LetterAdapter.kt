@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.letter_view.view.*
 
-class LetterAdapter (private val data: CharArray
+class LetterAdapter (var data: CharArray
 ) : RecyclerView.Adapter<LetterAdapter.LetterViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LetterViewHolder {
