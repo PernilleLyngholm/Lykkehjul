@@ -417,7 +417,7 @@ object WordsMemoryDB
             "Planet",
             "NASA")
 
-    val wordList =
+    val wordList: String =
         listOf (dkCities.random(),
             capitals.random(),
             usStates.random(),
@@ -432,10 +432,7 @@ object WordsMemoryDB
             space.random()
         ).random()
 
-    val testData =
-        listOf("test", "abcde")
-
-    val categoryList : List <String> =
+    val categoryList =
         listOf("Danish City",
         "Capital",
         "US States",

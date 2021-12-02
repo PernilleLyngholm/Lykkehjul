@@ -10,13 +10,14 @@
 
     <TextView
         android:id="@+id/tvLetter"
-        android:layout_width="40dp"
-        android:layout_height="48dp"
+        android:layout_width="24dp"
+        android:layout_height="30dp"
         android:text=""
         android:textColor="@color/white"
-        android:textSize="32sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         android:textAlignment="center"
+        android:textAllCaps="true"
         android:background="@drawable/text_border_blue_bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
