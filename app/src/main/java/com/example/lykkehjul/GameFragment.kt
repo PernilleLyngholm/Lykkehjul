@@ -13,15 +13,16 @@ class GameFragment : Fragment(R.layout.fragment_game) {
 
     //lateinit var newWord: String
     lateinit var adapter: LetterAdapter
-
+    var points: Int = 0
+    var tempPoint = 0
+    var lives = 5
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         val layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-
-        val wordToGuess = WordsMemoryDB.testData.random()
-        var wordsUnderscore = ""
+        val wordToGuess: String = WordsMemoryDB.wordList
+        var wordsUnderscore = "_"
 
         for (i in wordToGuess) {
             wordsUnderscore += "_"
@@ -35,24 +36,43 @@ class GameFragment : Fragment(R.layout.fragment_game) {
         rv_word_to_guess.layoutManager = layoutManager
         rv_word_to_guess.setHasFixedSize(true)
         rv_word_to_guess.adapter = adapter
+        textView_points.text = ("Points: $points")
+        textView_lives.text = ("Lives: $lives")
+
 
         button_spin.setOnClickListener {
             val spinValue = getSpinValue()
             textView_result_of_spin.text = spinValue
 
             when (spinValue) {
-                "100" -> print("x == 1")
-                "200" -> print("x == 2")
-                "300" -> print("x == 1")
-                "400" -> print("x == 1")
-                "500" -> print("x == 1")
-                "Bankrupt" -> print("x == 1")
-                "Missed turn"-> print("x == 1")
-                "Extra turn"-> print("x == 1")
-                else -> {
-                    print("x is neither 1 nor 2")
-                }
+                "100" -> tempPoint += 100
+                "200" -> tempPoint += 200
+                "300" -> tempPoint += 300
+                "400" -> tempPoint += 400
+                "500" -> tempPoint += 500
+                "Missed turn"-> lives -= 1
+                "Extra turn"-> lives += 1
+                else -> points = 0
             }
+        }
+
+        a.setOnClickListener {
+            val isCorrectGuess = wordToGuess.contains('a')
+            if (isCorrectGuess) {
+                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 'a')
+                if (letterIndex != -1) {
+
+                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('a', temp, letterIndex)
+                    adapter.data = newWord.toCharArray()
+                    adapter.notifyDataSetChanged()
+
+                    var count = LykkehjulLogic.countLetterInWord('a', wordToGuess)
+
+                    points += count*tempPoint
+                }
+
+            }
+
         }
 
         e.setOnClickListener {
@@ -64,6 +84,10 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                     var newWord = LykkehjulLogic.placeLetterInWordByIndex('e', temp, letterIndex)
                     adapter.data = newWord.toCharArray()
                     adapter.notifyDataSetChanged()
+
+                    var count = LykkehjulLogic.countLetterInWord('e', wordToGuess)
+
+                    points += count*tempPoint
                 }
 
             }

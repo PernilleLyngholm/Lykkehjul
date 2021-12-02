@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_homeFragment_to_gameFragment"
             app:destination="@id/gameFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_categoryFragment"
+            app:destination="@id/categoryFragment" />
     </fragment>
     <fragment
         android:id="@+id/gameFragment"
@@ -26,5 +29,13 @@
     <fragment
         android:id="@+id/gameResultFragment"
         android:name="com.example.lykkehjul.GameResultFragment"
-        android:label="GameResultFragment" />
+        android:label="GameResultFragment" >
+        <action
+            android:id="@+id/action_gameResultFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.example.lykkehjul.CategoryFragment"
+        android:label="CategoryFragment" />
 </navigation>

@@ -11,21 +11,50 @@
     android:padding="16dp"
     tools:context=".GameFragment">
 
-    <TextView
-        android:id="@+id/textView_points_and_lives"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="350dp"
-        android:layout_height="36dp"
+        android:layout_height="30dp"
         android:layout_gravity="center"
-        android:layout_marginBottom="16dp"
-        android:background="@null"
-        android:textColor="@color/white"
-        android:text="Point: "/>
+        >
+
+        <TextView
+            android:id="@+id/textView_points"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:layout_marginStart="24dp"
+            android:background="@null"
+            android:text="Point: "
+
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_lives"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:background="@null"
+            android:text="Lives: "
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_word_to_guess"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="100dp"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:padding="16dp"
         android:layout_gravity="center"
         android:background="@drawable/text_border_purple_bg"
         android:orientation="horizontal"
@@ -53,7 +82,10 @@
         android:layout_height="36dp"
         android:layout_gravity="center"
         android:background="@drawable/text_border_purple_bg"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_spin"

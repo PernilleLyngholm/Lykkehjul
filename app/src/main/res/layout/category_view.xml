@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<Button xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@android:color/white">
+
+<Button
             android:id="@+id/category_item"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="48dp"
             android:text="Category"
             android:textColor="@color/white"
@@ -10,5 +18,6 @@
             android:textSize="18sp"
             android:layout_margin="4dp"
             android:padding="8dp"
-            android:background="@color/purple_dark"
-/>
+            android:background="@color/purple_dark"/>
+
+</LinearLayout>

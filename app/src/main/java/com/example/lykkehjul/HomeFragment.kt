@@ -21,6 +21,11 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
             findNavController().navigate(action)
         }
 
+        categoryButton.setOnClickListener {
+            val action = HomeFragmentDirections.actionHomeFragmentToCategoryFragment()
+            findNavController().navigate(action)
+        }
+
 
     }
 
