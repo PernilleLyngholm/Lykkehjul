@@ -569,11 +569,10 @@ class GameFragment : Fragment(R.layout.fragment_game) {
             findNavController().navigate(action)
         }
     }
-    private fun showGameWon(wordToGuess: String) {
+    private fun showGameWon() {
         if (lives <= 0) {
             layout_you_lose.visibility = View.GONE
             textView_you_win.visibility = View.VISIBLE
-            textView_lost_show_word.text = "The word was $wordToGuess"
             val action = GameFragmentDirections.actionGameFragmentToGameResultFragment()
             findNavController().navigate(action)
         }
