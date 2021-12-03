@@ -78,7 +78,7 @@
         android:layout_height="36dp"
         android:layout_gravity="center"
         android:layout_marginTop="-18dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="24dp"
         android:background="@drawable/text_border_blue_bg"
         android:text="category"
         android:textAlignment="center"
@@ -111,6 +111,9 @@
         app:cornerRadius="10dp"
         tools:ignore="TextContrastCheck" />
 
+<!--    Tastatur inspireret af følgende video:
+        https://www.youtube.com/watch?v=kGGpH7ypxAU-->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/lettersLayout"
         android:layout_width="match_parent"
@@ -130,7 +133,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
 
         <TextView
             android:id="@+id/a"
@@ -529,9 +531,6 @@
             app:layout_constraintEnd_toStartOf="@+id/flow"
             app:layout_constraintStart_toEndOf="@+id/z"
             app:layout_constraintTop_toBottomOf="@+id/t" />
-
-
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

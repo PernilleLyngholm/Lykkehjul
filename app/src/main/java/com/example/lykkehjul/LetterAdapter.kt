@@ -7,6 +7,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.letter_view.view.*
 
+//    https://www.youtube.com/watch?v=cGUu1ab9vFw
+//    brugt til inspiration til CategoryAdapter og LetterAdapter
+
 class LetterAdapter (var data: CharArray
 ) : RecyclerView.Adapter<LetterAdapter.LetterViewHolder>() {
 

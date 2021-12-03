@@ -10,7 +10,6 @@ import kotlinx.android.synthetic.main.fragment_game.*
 
 class CategoryFragment : Fragment(R.layout.fragment_categories){
 
-
     lateinit var adapter: CategoryAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -22,7 +21,6 @@ class CategoryFragment : Fragment(R.layout.fragment_categories){
         adapter = CategoryAdapter(listOfCategories)
 
         rv_categories.layoutManager = layoutManager
-        //rv_categories.setHasFixedSize(true)
         rv_categories.adapter = adapter
     }
 }

@@ -2,10 +2,14 @@ package com.example.lykkehjul
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.lykkehjul.logic.LykkehjulLogic
 import kotlinx.android.synthetic.main.fragment_game.*
+import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_result_game.*
 
 class GameFragment : Fragment(R.layout.fragment_game) {
 
@@ -16,6 +20,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
     var points: Int = 0
     var tempPoint = 0
     var lives = 5
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -38,6 +43,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
         rv_word_to_guess.adapter = adapter
         textView_points.text = ("Points: $points")
         textView_lives.text = ("Lives: $lives")
+        textView_category.text = (WordsMemoryDB.wordList)
 
 
 
@@ -72,10 +78,6 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                     points += count*tempPoint
                 }
 
-            } else {
-                lives -= 1
-                textView_points.setText("Points: $points")
-
             }
 
         }
@@ -94,10 +96,6 @@ class GameFragment : Fragment(R.layout.fragment_game) {
 
                     points += count*tempPoint
                 }
-
-            } else {
-                lives -= 1
-                textView_points.setText("Points: $points")
 
             }
 
@@ -118,7 +116,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                     points += count*tempPoint
                 }
 
-            } else lives -=1
+            }
 
         }
 
@@ -138,7 +136,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
 
                 }
 
-            } else lives -=1
+            }
 
         }
         e.setOnClickListener {
@@ -156,7 +154,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                     points += count*tempPoint
                 }
 
-            } else lives -=1
+            }
 
         }
 
@@ -175,7 +173,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                     points += count*tempPoint
                 }
 
-            } else lives -=1
+            }
 
         }
         g.setOnClickListener {
@@ -193,7 +191,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                     points += count*tempPoint
                 }
 
-            } else lives -=1
+            }
 
         }
         h.setOnClickListener {
@@ -211,7 +209,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                     points += count*tempPoint
                 }
 
-            } else lives -=1
+            }
 
         }
 
@@ -230,7 +228,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                     points += count*tempPoint
                 }
 
-            } else lives -=1
+            }
 
         }
         j.setOnClickListener {
@@ -248,7 +246,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                     points += count*tempPoint
                 }
 
-            } else lives -=1
+            }
 
         }
         k.setOnClickListener {
@@ -266,7 +264,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                     points += count*tempPoint
                 }
 
-            } else lives -=1
+            }
 
         }
         l.setOnClickListener {
@@ -284,7 +282,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                     points += count*tempPoint
                 }
 
-            } else lives -=1
+            }
 
         }
         m.setOnClickListener {
@@ -302,7 +300,245 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                     points += count*tempPoint
                 }
 
-            } else lives -=1
+            }
+
+        }
+
+        n.setOnClickListener {
+            val isCorrectGuess = wordToGuess.contains('n')
+            if (isCorrectGuess) {
+                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 'n')
+                if (letterIndex != -1) {
+
+                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('n', temp, letterIndex)
+                    adapter.data = newWord.toCharArray()
+                    adapter.notifyDataSetChanged()
+
+                    var count = LykkehjulLogic.countLetterInWord('n', wordToGuess)
+
+                    points += count*tempPoint
+                }
+
+            }
+
+        }
+
+        o.setOnClickListener {
+            val isCorrectGuess = wordToGuess.contains('o')
+            if (isCorrectGuess) {
+                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 'o')
+                if (letterIndex != -1) {
+
+                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('o', temp, letterIndex)
+                    adapter.data = newWord.toCharArray()
+                    adapter.notifyDataSetChanged()
+
+                    var count = LykkehjulLogic.countLetterInWord('o', wordToGuess)
+
+                    points += count*tempPoint
+                }
+
+            }
+
+        }
+        p.setOnClickListener {
+            val isCorrectGuess = wordToGuess.contains('p')
+            if (isCorrectGuess) {
+                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 'p')
+                if (letterIndex != -1) {
+
+                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('p', temp, letterIndex)
+                    adapter.data = newWord.toCharArray()
+                    adapter.notifyDataSetChanged()
+
+                    var count = LykkehjulLogic.countLetterInWord('p', wordToGuess)
+
+                    points += count*tempPoint
+                }
+
+            }
+
+        }
+
+        q.setOnClickListener {
+            val isCorrectGuess = wordToGuess.contains('q')
+            if (isCorrectGuess) {
+                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 'q')
+                if (letterIndex != -1) {
+
+                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('q', temp, letterIndex)
+                    adapter.data = newWord.toCharArray()
+                    adapter.notifyDataSetChanged()
+
+                    var count = LykkehjulLogic.countLetterInWord('q', wordToGuess)
+
+                    points += count*tempPoint
+                }
+
+            }
+
+        }
+        r.setOnClickListener {
+            val isCorrectGuess = wordToGuess.contains('r')
+            if (isCorrectGuess) {
+                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 'r')
+                if (letterIndex != -1) {
+
+                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('r', temp, letterIndex)
+                    adapter.data = newWord.toCharArray()
+                    adapter.notifyDataSetChanged()
+
+                    var count = LykkehjulLogic.countLetterInWord('r', wordToGuess)
+
+                    points += count*tempPoint
+                }
+
+            }
+
+        }
+
+        s.setOnClickListener {
+            val isCorrectGuess = wordToGuess.contains('s')
+            if (isCorrectGuess) {
+                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 's')
+                if (letterIndex != -1) {
+
+                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('s', temp, letterIndex)
+                    adapter.data = newWord.toCharArray()
+                    adapter.notifyDataSetChanged()
+
+                    var count = LykkehjulLogic.countLetterInWord('s', wordToGuess)
+
+                    points += count*tempPoint
+                }
+
+            }
+
+        }
+        t.setOnClickListener {
+            val isCorrectGuess = wordToGuess.contains('t')
+            if (isCorrectGuess) {
+                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 't')
+                if (letterIndex != -1) {
+
+                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('t', temp, letterIndex)
+                    adapter.data = newWord.toCharArray()
+                    adapter.notifyDataSetChanged()
+
+                    var count = LykkehjulLogic.countLetterInWord('t', wordToGuess)
+
+                    points += count*tempPoint
+                }
+
+            }
+
+        }
+        u.setOnClickListener {
+            val isCorrectGuess = wordToGuess.contains('u')
+            if (isCorrectGuess) {
+                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 'u')
+                if (letterIndex != -1) {
+
+                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('u', temp, letterIndex)
+                    adapter.data = newWord.toCharArray()
+                    adapter.notifyDataSetChanged()
+
+                    var count = LykkehjulLogic.countLetterInWord('u', wordToGuess)
+
+                    points += count*tempPoint
+                }
+
+            }
+
+        }
+        v.setOnClickListener {
+            val isCorrectGuess = wordToGuess.contains('v')
+            if (isCorrectGuess) {
+                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 'v')
+                if (letterIndex != -1) {
+
+                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('v', temp, letterIndex)
+                    adapter.data = newWord.toCharArray()
+                    adapter.notifyDataSetChanged()
+
+                    var count = LykkehjulLogic.countLetterInWord('v', wordToGuess)
+
+                    points += count*tempPoint
+                }
+
+            }
+
+        }
+        w.setOnClickListener {
+            val isCorrectGuess = wordToGuess.contains('w')
+            if (isCorrectGuess) {
+                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 'w')
+                if (letterIndex != -1) {
+
+                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('w', temp, letterIndex)
+                    adapter.data = newWord.toCharArray()
+                    adapter.notifyDataSetChanged()
+
+                    var count = LykkehjulLogic.countLetterInWord('w', wordToGuess)
+
+                    points += count*tempPoint
+                }
+
+            }
+
+        }
+        x.setOnClickListener {
+            val isCorrectGuess = wordToGuess.contains('x')
+            if (isCorrectGuess) {
+                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 'x')
+                if (letterIndex != -1) {
+
+                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('x', temp, letterIndex)
+                    adapter.data = newWord.toCharArray()
+                    adapter.notifyDataSetChanged()
+
+                    var count = LykkehjulLogic.countLetterInWord('x', wordToGuess)
+
+                    points += count*tempPoint
+                }
+
+            }
+
+        }
+        y.setOnClickListener {
+            val isCorrectGuess = wordToGuess.contains('y')
+            if (isCorrectGuess) {
+                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 'y')
+                if (letterIndex != -1) {
+
+                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('y', temp, letterIndex)
+                    adapter.data = newWord.toCharArray()
+                    adapter.notifyDataSetChanged()
+
+                    var count = LykkehjulLogic.countLetterInWord('y', wordToGuess)
+
+                    points += count*tempPoint
+                }
+
+            }
+
+        }
+        z.setOnClickListener {
+            val isCorrectGuess = wordToGuess.contains('z')
+            if (isCorrectGuess) {
+                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 'z')
+                if (letterIndex != -1) {
+
+                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('z', temp, letterIndex)
+                    adapter.data = newWord.toCharArray()
+                    adapter.notifyDataSetChanged()
+
+                    var count = LykkehjulLogic.countLetterInWord('z', wordToGuess)
+
+                    points += count*tempPoint
+                }
+
+            }
 
         }
 
@@ -324,5 +560,24 @@ class GameFragment : Fragment(R.layout.fragment_game) {
 
     }
 
+    private fun showGameLost(wordToGuess: String) {
+        if (lives<=0){
+            layout_you_lose.visibility = View.VISIBLE
+            layout_you_win.visibility = View.GONE
+            textView_lost_show_word.text = "The word was $wordToGuess"
+            val action = GameFragmentDirections.actionGameFragmentToGameResultFragment()
+            findNavController().navigate(action)
+        }
+    }
+    private fun showGameWon(wordToGuess: String) {
+        if (lives <= 0) {
+            layout_you_lose.visibility = View.GONE
+            textView_you_win.visibility = View.VISIBLE
+            textView_lost_show_word.text = "The word was $wordToGuess"
+            val action = GameFragmentDirections.actionGameFragmentToGameResultFragment()
+            findNavController().navigate(action)
+        }
+
+    }
 
 }
