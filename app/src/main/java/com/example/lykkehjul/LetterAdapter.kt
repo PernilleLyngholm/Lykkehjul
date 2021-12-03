@@ -14,10 +14,10 @@ class LetterAdapter (var data: CharArray
 ) : RecyclerView.Adapter<LetterAdapter.LetterViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LetterViewHolder {
-        val v: View = LayoutInflater.from(parent.context)
+        val view: View = LayoutInflater.from(parent.context)
             .inflate(R.layout.letter_view, parent, false)
 
-        return LetterViewHolder(v)
+        return LetterViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: LetterAdapter.LetterViewHolder, position: Int) {
@@ -27,6 +27,7 @@ class LetterAdapter (var data: CharArray
     override fun getItemCount(): Int {return data.size}
 
     inner class LetterViewHolder
+
     internal constructor(
         itemView: View
     ) : RecyclerView.ViewHolder(itemView){

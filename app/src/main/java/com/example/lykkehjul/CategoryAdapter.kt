@@ -16,10 +16,10 @@ class CategoryAdapter(
 ) : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
-        val v: View = LayoutInflater.from(parent.context)
+        val view: View = LayoutInflater.from(parent.context)
             .inflate(R.layout.category_view, parent, false)
 
-        return CategoryViewHolder(v)
+        return CategoryViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: CategoryAdapter.CategoryViewHolder, position: Int) {

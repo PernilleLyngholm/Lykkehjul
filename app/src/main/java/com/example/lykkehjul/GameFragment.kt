@@ -544,6 +544,8 @@ class GameFragment : Fragment(R.layout.fragment_game) {
 
     }
 
+
+
     fun getSpinValue(): String {
         val spin =
             listOf(

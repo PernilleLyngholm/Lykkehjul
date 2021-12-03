@@ -3,6 +3,7 @@ package com.example.lykkehjul.logic
 import com.example.lykkehjul.WordsMemoryDB
 import kotlinx.android.synthetic.main.fragment_game.*
 
+
 object LykkehjulLogic {
 
     fun getLetterIndex(word: String, letter: Char): Int {
@@ -30,6 +31,8 @@ object LykkehjulLogic {
         }
         return count
     }
+
+
 
 }
 
