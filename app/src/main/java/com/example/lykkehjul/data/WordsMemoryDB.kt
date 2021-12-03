@@ -1,4 +1,4 @@
-package com.example.lykkehjul
+package com.example.lykkehjul.data
 
 object WordsMemoryDB
 {
@@ -418,7 +418,8 @@ object WordsMemoryDB
             "NASA")
 
     val wordList: String =
-        listOf (dkCities.random(),
+        listOf (
+            dkCities.random(),
             capitals.random(),
             usStates.random(),
             mixedAnimals.random(),

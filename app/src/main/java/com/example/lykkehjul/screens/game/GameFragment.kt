@@ -7,7 +7,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.lykkehjul.adapters.LetterAdapter
 import com.example.lykkehjul.R
-import com.example.lykkehjul.WordsMemoryDB
+import com.example.lykkehjul.data.WordsMemoryDB
 import kotlinx.android.synthetic.main.fragment_game.*
 import kotlinx.android.synthetic.main.fragment_result_game.*
 
