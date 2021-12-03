@@ -1,10 +1,11 @@
-package com.example.lykkehjul
+package com.example.lykkehjul.adapters
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.lykkehjul.R
 import kotlinx.android.synthetic.main.letter_view.view.*
 
 //    https://www.youtube.com/watch?v=cGUu1ab9vFw
@@ -20,7 +21,7 @@ class LetterAdapter (var data: CharArray
         return LetterViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: LetterAdapter.LetterViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: LetterViewHolder, position: Int) {
         holder.tvLetter.text = data.get(position).toString()
     }
 

@@ -1,14 +1,15 @@
-package com.example.lykkehjul
+package com.example.lykkehjul.screens.game
 
 import android.os.Bundle
 import android.view.View
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.lykkehjul.adapters.LetterAdapter
+import com.example.lykkehjul.R
+import com.example.lykkehjul.WordsMemoryDB
 import com.example.lykkehjul.logic.LykkehjulLogic
 import kotlinx.android.synthetic.main.fragment_game.*
-import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_result_game.*
 
 class GameFragment : Fragment(R.layout.fragment_game) {
@@ -20,7 +21,6 @@ class GameFragment : Fragment(R.layout.fragment_game) {
     var points: Int = 0
     var tempPoint = 0
     var lives = 5
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -66,7 +66,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
         a.setOnClickListener {
             val isCorrectGuess = wordToGuess.contains('a')
             if (isCorrectGuess) {
-                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 'a')
+                val letterIndex = getLetterIndex(wordToGuess, 'a')
                 if (letterIndex != -1) {
 
                     var newWord = LykkehjulLogic.placeLetterInWordByIndex('a', temp, letterIndex)
@@ -85,7 +85,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
         b.setOnClickListener {
             val isCorrectGuess = wordToGuess.contains('b')
             if (isCorrectGuess) {
-                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 'b')
+                val letterIndex = getLetterIndex(wordToGuess, 'b')
                 if (letterIndex != -1) {
 
                     var newWord = LykkehjulLogic.placeLetterInWordByIndex('b', temp, letterIndex)
@@ -104,7 +104,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
         c.setOnClickListener {
             val isCorrectGuess = wordToGuess.contains('c')
             if (isCorrectGuess) {
-                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 'c')
+                val letterIndex = getLetterIndex(wordToGuess, 'c')
                 if (letterIndex != -1) {
 
                     var newWord = LykkehjulLogic.placeLetterInWordByIndex('c', temp, letterIndex)
@@ -123,7 +123,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
         d.setOnClickListener {
             val isCorrectGuess = wordToGuess.contains('d')
             if (isCorrectGuess) {
-                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 'd')
+                val letterIndex = getLetterIndex(wordToGuess, 'd')
                 if (letterIndex != -1) {
 
                     var newWord = LykkehjulLogic.placeLetterInWordByIndex('d', temp, letterIndex)
@@ -142,7 +142,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
         e.setOnClickListener {
             val isCorrectGuess = wordToGuess.contains('e')
             if (isCorrectGuess) {
-                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 'e')
+                val letterIndex = getLetterIndex(wordToGuess, 'e')
                 if (letterIndex != -1) {
 
                     var newWord = LykkehjulLogic.placeLetterInWordByIndex('e', temp, letterIndex)
@@ -161,7 +161,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
         f.setOnClickListener {
             val isCorrectGuess = wordToGuess.contains('f')
             if (isCorrectGuess) {
-                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 'f')
+                val letterIndex = getLetterIndex(wordToGuess, 'f')
                 if (letterIndex != -1) {
 
                     var newWord = LykkehjulLogic.placeLetterInWordByIndex('f', temp, letterIndex)
@@ -179,7 +179,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
         g.setOnClickListener {
             val isCorrectGuess = wordToGuess.contains('g')
             if (isCorrectGuess) {
-                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 'g')
+                val letterIndex = getLetterIndex(wordToGuess, 'g')
                 if (letterIndex != -1) {
 
                     var newWord = LykkehjulLogic.placeLetterInWordByIndex('g', temp, letterIndex)
@@ -197,7 +197,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
         h.setOnClickListener {
             val isCorrectGuess = wordToGuess.contains('h')
             if (isCorrectGuess) {
-                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 'h')
+                val letterIndex = getLetterIndex(wordToGuess, 'h')
                 if (letterIndex != -1) {
 
                     var newWord = LykkehjulLogic.placeLetterInWordByIndex('h', temp, letterIndex)
@@ -216,7 +216,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
         i.setOnClickListener {
             val isCorrectGuess = wordToGuess.contains('i')
             if (isCorrectGuess) {
-                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 'i')
+                val letterIndex = getLetterIndex(wordToGuess, 'i')
                 if (letterIndex != -1) {
 
                     var newWord = LykkehjulLogic.placeLetterInWordByIndex('i', temp, letterIndex)
@@ -234,7 +234,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
         j.setOnClickListener {
             val isCorrectGuess = wordToGuess.contains('j')
             if (isCorrectGuess) {
-                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 'j')
+                val letterIndex = getLetterIndex(wordToGuess, 'j')
                 if (letterIndex != -1) {
 
                     var newWord = LykkehjulLogic.placeLetterInWordByIndex('j', temp, letterIndex)
@@ -252,7 +252,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
         k.setOnClickListener {
             val isCorrectGuess = wordToGuess.contains('k')
             if (isCorrectGuess) {
-                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 'k')
+                val letterIndex = getLetterIndex(wordToGuess, 'k')
                 if (letterIndex != -1) {
 
                     var newWord = LykkehjulLogic.placeLetterInWordByIndex('k', temp, letterIndex)
@@ -270,7 +270,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
         l.setOnClickListener {
             val isCorrectGuess = wordToGuess.contains('l')
             if (isCorrectGuess) {
-                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 'l')
+                val letterIndex = getLetterIndex(wordToGuess, 'l')
                 if (letterIndex != -1) {
 
                     var newWord = LykkehjulLogic.placeLetterInWordByIndex('l', temp, letterIndex)
@@ -288,7 +288,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
         m.setOnClickListener {
             val isCorrectGuess = wordToGuess.contains('m')
             if (isCorrectGuess) {
-                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 'm')
+                val letterIndex = getLetterIndex(wordToGuess, 'm')
                 if (letterIndex != -1) {
 
                     var newWord = LykkehjulLogic.placeLetterInWordByIndex('m', temp, letterIndex)
@@ -307,7 +307,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
         n.setOnClickListener {
             val isCorrectGuess = wordToGuess.contains('n')
             if (isCorrectGuess) {
-                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 'n')
+                val letterIndex = getLetterIndex(wordToGuess, 'n')
                 if (letterIndex != -1) {
 
                     var newWord = LykkehjulLogic.placeLetterInWordByIndex('n', temp, letterIndex)
@@ -326,7 +326,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
         o.setOnClickListener {
             val isCorrectGuess = wordToGuess.contains('o')
             if (isCorrectGuess) {
-                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 'o')
+                val letterIndex = getLetterIndex(wordToGuess, 'o')
                 if (letterIndex != -1) {
 
                     var newWord = LykkehjulLogic.placeLetterInWordByIndex('o', temp, letterIndex)
@@ -344,7 +344,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
         p.setOnClickListener {
             val isCorrectGuess = wordToGuess.contains('p')
             if (isCorrectGuess) {
-                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 'p')
+                val letterIndex = getLetterIndex(wordToGuess, 'p')
                 if (letterIndex != -1) {
 
                     var newWord = LykkehjulLogic.placeLetterInWordByIndex('p', temp, letterIndex)
@@ -363,7 +363,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
         q.setOnClickListener {
             val isCorrectGuess = wordToGuess.contains('q')
             if (isCorrectGuess) {
-                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 'q')
+                val letterIndex = getLetterIndex(wordToGuess, 'q')
                 if (letterIndex != -1) {
 
                     var newWord = LykkehjulLogic.placeLetterInWordByIndex('q', temp, letterIndex)
@@ -381,7 +381,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
         r.setOnClickListener {
             val isCorrectGuess = wordToGuess.contains('r')
             if (isCorrectGuess) {
-                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 'r')
+                val letterIndex = getLetterIndex(wordToGuess, 'r')
                 if (letterIndex != -1) {
 
                     var newWord = LykkehjulLogic.placeLetterInWordByIndex('r', temp, letterIndex)
@@ -400,7 +400,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
         s.setOnClickListener {
             val isCorrectGuess = wordToGuess.contains('s')
             if (isCorrectGuess) {
-                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 's')
+                val letterIndex = getLetterIndex(wordToGuess, 's')
                 if (letterIndex != -1) {
 
                     var newWord = LykkehjulLogic.placeLetterInWordByIndex('s', temp, letterIndex)
@@ -418,7 +418,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
         t.setOnClickListener {
             val isCorrectGuess = wordToGuess.contains('t')
             if (isCorrectGuess) {
-                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 't')
+                val letterIndex = getLetterIndex(wordToGuess, 't')
                 if (letterIndex != -1) {
 
                     var newWord = LykkehjulLogic.placeLetterInWordByIndex('t', temp, letterIndex)
@@ -436,7 +436,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
         u.setOnClickListener {
             val isCorrectGuess = wordToGuess.contains('u')
             if (isCorrectGuess) {
-                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 'u')
+                val letterIndex = getLetterIndex(wordToGuess, 'u')
                 if (letterIndex != -1) {
 
                     var newWord = LykkehjulLogic.placeLetterInWordByIndex('u', temp, letterIndex)
@@ -454,7 +454,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
         v.setOnClickListener {
             val isCorrectGuess = wordToGuess.contains('v')
             if (isCorrectGuess) {
-                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 'v')
+                val letterIndex = getLetterIndex(wordToGuess, 'v')
                 if (letterIndex != -1) {
 
                     var newWord = LykkehjulLogic.placeLetterInWordByIndex('v', temp, letterIndex)
@@ -472,7 +472,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
         w.setOnClickListener {
             val isCorrectGuess = wordToGuess.contains('w')
             if (isCorrectGuess) {
-                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 'w')
+                val letterIndex = getLetterIndex(wordToGuess, 'w')
                 if (letterIndex != -1) {
 
                     var newWord = LykkehjulLogic.placeLetterInWordByIndex('w', temp, letterIndex)
@@ -490,7 +490,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
         x.setOnClickListener {
             val isCorrectGuess = wordToGuess.contains('x')
             if (isCorrectGuess) {
-                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 'x')
+                val letterIndex = getLetterIndex(wordToGuess, 'x')
                 if (letterIndex != -1) {
 
                     var newWord = LykkehjulLogic.placeLetterInWordByIndex('x', temp, letterIndex)
@@ -508,7 +508,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
         y.setOnClickListener {
             val isCorrectGuess = wordToGuess.contains('y')
             if (isCorrectGuess) {
-                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 'y')
+                val letterIndex = getLetterIndex(wordToGuess, 'y')
                 if (letterIndex != -1) {
 
                     var newWord = LykkehjulLogic.placeLetterInWordByIndex('y', temp, letterIndex)
@@ -526,7 +526,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
         z.setOnClickListener {
             val isCorrectGuess = wordToGuess.contains('z')
             if (isCorrectGuess) {
-                val letterIndex = LykkehjulLogic.getLetterIndex(wordToGuess, 'z')
+                val letterIndex = getLetterIndex(wordToGuess, 'z')
                 if (letterIndex != -1) {
 
                     var newWord = LykkehjulLogic.placeLetterInWordByIndex('z', temp, letterIndex)
@@ -579,6 +579,14 @@ class GameFragment : Fragment(R.layout.fragment_game) {
             findNavController().navigate(action)
         }
 
+    }
+
+    fun getLetterIndex(word: String, letter: Char): Int {
+        for ((index, value) in word.withIndex()) {
+            if (letter == value)
+                return index
+        }
+        return -1
     }
 
 }

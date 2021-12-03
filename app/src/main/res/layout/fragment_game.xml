@@ -9,7 +9,7 @@
     android:background="@drawable/bg_game"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".GameFragment">
+    tools:context=".screens.game.GameFragment">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout

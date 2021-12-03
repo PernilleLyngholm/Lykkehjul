@@ -1,12 +1,14 @@
 
-package com.example.lykkehjul
+package com.example.lykkehjul.screens.category
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.lykkehjul.adapters.CategoryAdapter
+import com.example.lykkehjul.R
+import com.example.lykkehjul.WordsMemoryDB
 import kotlinx.android.synthetic.main.fragment_categories.*
-import kotlinx.android.synthetic.main.fragment_game.*
 
 class CategoryFragment : Fragment(R.layout.fragment_categories){
 
