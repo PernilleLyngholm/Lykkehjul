@@ -22,7 +22,7 @@
             android:layout_gravity="center"
             android:background="@drawable/text_border_purple_bg"
             android:textColor="@color/white"
-            android:text="Congratulations! You guessed the word!"
+            android:text="@string/congratulations_you_guessed_the_word"
             android:textAlignment="center"
             android:textSize="32sp"
             android:textStyle="bold"
@@ -33,18 +33,18 @@
             />
 
         <ImageView
-            android:id="@+id/imageView7"
+            android:id="@+id/star1"
             android:layout_width="87dp"
             android:layout_height="73dp"
             android:layout_marginTop="26dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView4"
+            app:layout_constraintTop_toBottomOf="@+id/star7"
             app:srcCompat="@drawable/star_purple" />
 
         <ImageView
-            android:id="@+id/imageView8"
+            android:id="@+id/star2"
             android:layout_width="87dp"
             android:layout_height="73dp"
             android:layout_marginTop="24dp"
@@ -54,38 +54,38 @@
             app:srcCompat="@drawable/star_purple" />
 
         <ImageView
-            android:id="@+id/imageView10"
+            android:id="@+id/star3"
             android:layout_width="60dp"
             android:layout_height="54dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/imageView4"
-            app:layout_constraintEnd_toStartOf="@+id/imageView8"
+            app:layout_constraintBottom_toTopOf="@+id/star7"
+            app:layout_constraintEnd_toStartOf="@+id/star2"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/star_purple" />
 
         <ImageView
-            android:id="@+id/imageView15"
+            android:id="@+id/star4"
             android:layout_width="60dp"
             android:layout_height="54dp"
             android:layout_marginStart="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageView8"
+            app:layout_constraintEnd_toStartOf="@+id/star2"
             app:layout_constraintHorizontal_bias="0.55"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.26999998"
+            app:layout_constraintVertical_bias="0.27"
             app:srcCompat="@drawable/star_purple" />
 
         <ImageView
-            android:id="@+id/imageView12"
+            android:id="@+id/star5"
             android:layout_width="60dp"
             android:layout_height="54dp"
             android:layout_marginBottom="30dp"
-            app:layout_constraintBottom_toTopOf="@+id/imageView3"
-            app:layout_constraintEnd_toStartOf="@+id/imageView8"
+            app:layout_constraintBottom_toTopOf="@+id/star6"
+            app:layout_constraintEnd_toStartOf="@+id/star2"
             app:layout_constraintHorizontal_bias="0.75"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -93,7 +93,7 @@
             app:srcCompat="@drawable/star_purple" />
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/star6"
             android:layout_width="157dp"
             android:layout_height="149dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -101,11 +101,11 @@
             app:layout_constraintHorizontal_bias="0.89"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.22000003"
+            app:layout_constraintVertical_bias="0.22"
             app:srcCompat="@drawable/star_purple" />
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/star7"
             android:layout_width="125dp"
             android:layout_height="127dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -133,7 +133,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@drawable/text_border_purple_bg"
-            android:text="The word was: wordToGuess"
+            android:text="@string/the_word_was"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="20sp"
@@ -150,7 +150,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@drawable/text_border_purple_bg"
-            android:text="Sorry! You did not guess the word!"
+            android:text="@string/sorry_you_did_not_guess_the_word"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="32sp"
@@ -164,10 +164,10 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/tryAgainButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Try again"
+        android:text="@string/try_again"
         app:layout_constraintBottom_toBottomOf="@+id/layout_you_lose"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
