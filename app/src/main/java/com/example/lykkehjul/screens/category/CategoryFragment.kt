@@ -4,6 +4,7 @@ package com.example.lykkehjul.screens.category
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.lykkehjul.adapters.CategoryAdapter
 import com.example.lykkehjul.R
@@ -24,5 +25,11 @@ class CategoryFragment : Fragment(R.layout.fragment_categories){
 
         rv_categories.layoutManager = layoutManager
         rv_categories.adapter = adapter
+
+        backButton.setOnClickListener {
+            val action = CategoryFragmentDirections.actionCategoryFragmentToHomeFragment()
+            findNavController().navigate(action)
+        }
     }
+
 }
