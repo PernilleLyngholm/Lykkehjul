@@ -8,14 +8,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.lykkehjul.adapters.LetterAdapter
 import com.example.lykkehjul.R
 import com.example.lykkehjul.WordsMemoryDB
-import com.example.lykkehjul.logic.LykkehjulLogic
 import kotlinx.android.synthetic.main.fragment_game.*
 import kotlinx.android.synthetic.main.fragment_result_game.*
 
 class GameFragment : Fragment(R.layout.fragment_game) {
 
     lateinit var temp: String
-
     private var lettersUsed: String = ""
     private lateinit var adapter: LetterAdapter
     var points: Int = 0
@@ -43,8 +41,6 @@ class GameFragment : Fragment(R.layout.fragment_game) {
         rv_word_to_guess.adapter = adapter
         textView_points.text = ("Points: $points")
         textView_lives.text = ("Lives: $lives")
-        textView_category.text = (WordsMemoryDB.wordList)
-
 
 
         button_spin.setOnClickListener {
@@ -69,11 +65,11 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                 val letterIndex = getLetterIndex(wordToGuess, 'a')
                 if (letterIndex != -1) {
 
-                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('a', temp, letterIndex)
+                    var newWord = placeLetterInWordByIndex('a', temp, letterIndex)
                     adapter.data = newWord.toCharArray()
                     adapter.notifyDataSetChanged()
 
-                    var count = LykkehjulLogic.countLetterInWord('a', wordToGuess)
+                    var count = countLetterInWord('a', wordToGuess)
 
                     points += count*tempPoint
                 }
@@ -88,11 +84,11 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                 val letterIndex = getLetterIndex(wordToGuess, 'b')
                 if (letterIndex != -1) {
 
-                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('b', temp, letterIndex)
+                    var newWord = placeLetterInWordByIndex('b', temp, letterIndex)
                     adapter.data = newWord.toCharArray()
                     adapter.notifyDataSetChanged()
 
-                    var count = LykkehjulLogic.countLetterInWord('b', wordToGuess)
+                    var count = countLetterInWord('b', wordToGuess)
 
                     points += count*tempPoint
                 }
@@ -107,11 +103,11 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                 val letterIndex = getLetterIndex(wordToGuess, 'c')
                 if (letterIndex != -1) {
 
-                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('c', temp, letterIndex)
+                    var newWord = placeLetterInWordByIndex('c', temp, letterIndex)
                     adapter.data = newWord.toCharArray()
                     adapter.notifyDataSetChanged()
 
-                    var count = LykkehjulLogic.countLetterInWord('c', wordToGuess)
+                    var count = countLetterInWord('c', wordToGuess)
 
                     points += count*tempPoint
                 }
@@ -126,11 +122,11 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                 val letterIndex = getLetterIndex(wordToGuess, 'd')
                 if (letterIndex != -1) {
 
-                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('d', temp, letterIndex)
+                    var newWord = placeLetterInWordByIndex('d', temp, letterIndex)
                     adapter.data = newWord.toCharArray()
                     adapter.notifyDataSetChanged()
 
-                    var count = LykkehjulLogic.countLetterInWord('d', wordToGuess)
+                    var count = countLetterInWord('d', wordToGuess)
 
                     points += count*tempPoint
 
@@ -145,11 +141,11 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                 val letterIndex = getLetterIndex(wordToGuess, 'e')
                 if (letterIndex != -1) {
 
-                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('e', temp, letterIndex)
+                    var newWord = placeLetterInWordByIndex('e', temp, letterIndex)
                     adapter.data = newWord.toCharArray()
                     adapter.notifyDataSetChanged()
 
-                    var count = LykkehjulLogic.countLetterInWord('e', wordToGuess)
+                    var count = countLetterInWord('e', wordToGuess)
 
                     points += count*tempPoint
                 }
@@ -164,11 +160,11 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                 val letterIndex = getLetterIndex(wordToGuess, 'f')
                 if (letterIndex != -1) {
 
-                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('f', temp, letterIndex)
+                    var newWord = placeLetterInWordByIndex('f', temp, letterIndex)
                     adapter.data = newWord.toCharArray()
                     adapter.notifyDataSetChanged()
 
-                    var count = LykkehjulLogic.countLetterInWord('f', wordToGuess)
+                    var count = countLetterInWord('f', wordToGuess)
 
                     points += count*tempPoint
                 }
@@ -182,11 +178,11 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                 val letterIndex = getLetterIndex(wordToGuess, 'g')
                 if (letterIndex != -1) {
 
-                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('g', temp, letterIndex)
+                    var newWord = placeLetterInWordByIndex('g', temp, letterIndex)
                     adapter.data = newWord.toCharArray()
                     adapter.notifyDataSetChanged()
 
-                    var count = LykkehjulLogic.countLetterInWord('g', wordToGuess)
+                    var count = countLetterInWord('g', wordToGuess)
 
                     points += count*tempPoint
                 }
@@ -200,11 +196,11 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                 val letterIndex = getLetterIndex(wordToGuess, 'h')
                 if (letterIndex != -1) {
 
-                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('h', temp, letterIndex)
+                    var newWord = placeLetterInWordByIndex('h', temp, letterIndex)
                     adapter.data = newWord.toCharArray()
                     adapter.notifyDataSetChanged()
 
-                    var count = LykkehjulLogic.countLetterInWord('h', wordToGuess)
+                    var count = countLetterInWord('h', wordToGuess)
 
                     points += count*tempPoint
                 }
@@ -219,11 +215,11 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                 val letterIndex = getLetterIndex(wordToGuess, 'i')
                 if (letterIndex != -1) {
 
-                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('i', temp, letterIndex)
+                    var newWord = placeLetterInWordByIndex('i', temp, letterIndex)
                     adapter.data = newWord.toCharArray()
                     adapter.notifyDataSetChanged()
 
-                    var count = LykkehjulLogic.countLetterInWord('i', wordToGuess)
+                    var count = countLetterInWord('i', wordToGuess)
 
                     points += count*tempPoint
                 }
@@ -237,11 +233,11 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                 val letterIndex = getLetterIndex(wordToGuess, 'j')
                 if (letterIndex != -1) {
 
-                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('j', temp, letterIndex)
+                    var newWord = placeLetterInWordByIndex('j', temp, letterIndex)
                     adapter.data = newWord.toCharArray()
                     adapter.notifyDataSetChanged()
 
-                    var count = LykkehjulLogic.countLetterInWord('j', wordToGuess)
+                    var count = countLetterInWord('j', wordToGuess)
 
                     points += count*tempPoint
                 }
@@ -255,11 +251,11 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                 val letterIndex = getLetterIndex(wordToGuess, 'k')
                 if (letterIndex != -1) {
 
-                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('k', temp, letterIndex)
+                    var newWord = placeLetterInWordByIndex('k', temp, letterIndex)
                     adapter.data = newWord.toCharArray()
                     adapter.notifyDataSetChanged()
 
-                    var count = LykkehjulLogic.countLetterInWord('k', wordToGuess)
+                    var count = countLetterInWord('k', wordToGuess)
 
                     points += count*tempPoint
                 }
@@ -273,11 +269,11 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                 val letterIndex = getLetterIndex(wordToGuess, 'l')
                 if (letterIndex != -1) {
 
-                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('l', temp, letterIndex)
+                    var newWord = placeLetterInWordByIndex('l', temp, letterIndex)
                     adapter.data = newWord.toCharArray()
                     adapter.notifyDataSetChanged()
 
-                    var count = LykkehjulLogic.countLetterInWord('l', wordToGuess)
+                    var count = countLetterInWord('l', wordToGuess)
 
                     points += count*tempPoint
                 }
@@ -291,11 +287,11 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                 val letterIndex = getLetterIndex(wordToGuess, 'm')
                 if (letterIndex != -1) {
 
-                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('m', temp, letterIndex)
+                    var newWord = placeLetterInWordByIndex('m', temp, letterIndex)
                     adapter.data = newWord.toCharArray()
                     adapter.notifyDataSetChanged()
 
-                    var count = LykkehjulLogic.countLetterInWord('m', wordToGuess)
+                    var count = countLetterInWord('m', wordToGuess)
 
                     points += count*tempPoint
                 }
@@ -310,11 +306,11 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                 val letterIndex = getLetterIndex(wordToGuess, 'n')
                 if (letterIndex != -1) {
 
-                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('n', temp, letterIndex)
+                    var newWord = placeLetterInWordByIndex('n', temp, letterIndex)
                     adapter.data = newWord.toCharArray()
                     adapter.notifyDataSetChanged()
 
-                    var count = LykkehjulLogic.countLetterInWord('n', wordToGuess)
+                    var count = countLetterInWord('n', wordToGuess)
 
                     points += count*tempPoint
                 }
@@ -329,11 +325,11 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                 val letterIndex = getLetterIndex(wordToGuess, 'o')
                 if (letterIndex != -1) {
 
-                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('o', temp, letterIndex)
+                    var newWord = placeLetterInWordByIndex('o', temp, letterIndex)
                     adapter.data = newWord.toCharArray()
                     adapter.notifyDataSetChanged()
 
-                    var count = LykkehjulLogic.countLetterInWord('o', wordToGuess)
+                    var count = countLetterInWord('o', wordToGuess)
 
                     points += count*tempPoint
                 }
@@ -347,11 +343,11 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                 val letterIndex = getLetterIndex(wordToGuess, 'p')
                 if (letterIndex != -1) {
 
-                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('p', temp, letterIndex)
+                    var newWord = placeLetterInWordByIndex('p', temp, letterIndex)
                     adapter.data = newWord.toCharArray()
                     adapter.notifyDataSetChanged()
 
-                    var count = LykkehjulLogic.countLetterInWord('p', wordToGuess)
+                    var count = countLetterInWord('p', wordToGuess)
 
                     points += count*tempPoint
                 }
@@ -366,11 +362,11 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                 val letterIndex = getLetterIndex(wordToGuess, 'q')
                 if (letterIndex != -1) {
 
-                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('q', temp, letterIndex)
+                    var newWord = placeLetterInWordByIndex('q', temp, letterIndex)
                     adapter.data = newWord.toCharArray()
                     adapter.notifyDataSetChanged()
 
-                    var count = LykkehjulLogic.countLetterInWord('q', wordToGuess)
+                    var count = countLetterInWord('q', wordToGuess)
 
                     points += count*tempPoint
                 }
@@ -384,11 +380,11 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                 val letterIndex = getLetterIndex(wordToGuess, 'r')
                 if (letterIndex != -1) {
 
-                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('r', temp, letterIndex)
+                    var newWord = placeLetterInWordByIndex('r', temp, letterIndex)
                     adapter.data = newWord.toCharArray()
                     adapter.notifyDataSetChanged()
 
-                    var count = LykkehjulLogic.countLetterInWord('r', wordToGuess)
+                    var count = countLetterInWord('r', wordToGuess)
 
                     points += count*tempPoint
                 }
@@ -403,11 +399,11 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                 val letterIndex = getLetterIndex(wordToGuess, 's')
                 if (letterIndex != -1) {
 
-                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('s', temp, letterIndex)
+                    var newWord = placeLetterInWordByIndex('s', temp, letterIndex)
                     adapter.data = newWord.toCharArray()
                     adapter.notifyDataSetChanged()
 
-                    var count = LykkehjulLogic.countLetterInWord('s', wordToGuess)
+                    var count = countLetterInWord('s', wordToGuess)
 
                     points += count*tempPoint
                 }
@@ -421,11 +417,11 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                 val letterIndex = getLetterIndex(wordToGuess, 't')
                 if (letterIndex != -1) {
 
-                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('t', temp, letterIndex)
+                    var newWord = placeLetterInWordByIndex('t', temp, letterIndex)
                     adapter.data = newWord.toCharArray()
                     adapter.notifyDataSetChanged()
 
-                    var count = LykkehjulLogic.countLetterInWord('t', wordToGuess)
+                    var count = countLetterInWord('t', wordToGuess)
 
                     points += count*tempPoint
                 }
@@ -439,11 +435,11 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                 val letterIndex = getLetterIndex(wordToGuess, 'u')
                 if (letterIndex != -1) {
 
-                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('u', temp, letterIndex)
+                    var newWord = placeLetterInWordByIndex('u', temp, letterIndex)
                     adapter.data = newWord.toCharArray()
                     adapter.notifyDataSetChanged()
 
-                    var count = LykkehjulLogic.countLetterInWord('u', wordToGuess)
+                    var count = countLetterInWord('u', wordToGuess)
 
                     points += count*tempPoint
                 }
@@ -457,11 +453,11 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                 val letterIndex = getLetterIndex(wordToGuess, 'v')
                 if (letterIndex != -1) {
 
-                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('v', temp, letterIndex)
+                    var newWord = placeLetterInWordByIndex('v', temp, letterIndex)
                     adapter.data = newWord.toCharArray()
                     adapter.notifyDataSetChanged()
 
-                    var count = LykkehjulLogic.countLetterInWord('v', wordToGuess)
+                    var count = countLetterInWord('v', wordToGuess)
 
                     points += count*tempPoint
                 }
@@ -475,11 +471,11 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                 val letterIndex = getLetterIndex(wordToGuess, 'w')
                 if (letterIndex != -1) {
 
-                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('w', temp, letterIndex)
+                    var newWord = placeLetterInWordByIndex('w', temp, letterIndex)
                     adapter.data = newWord.toCharArray()
                     adapter.notifyDataSetChanged()
 
-                    var count = LykkehjulLogic.countLetterInWord('w', wordToGuess)
+                    var count = countLetterInWord('w', wordToGuess)
 
                     points += count*tempPoint
                 }
@@ -493,11 +489,11 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                 val letterIndex = getLetterIndex(wordToGuess, 'x')
                 if (letterIndex != -1) {
 
-                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('x', temp, letterIndex)
+                    var newWord = placeLetterInWordByIndex('x', temp, letterIndex)
                     adapter.data = newWord.toCharArray()
                     adapter.notifyDataSetChanged()
 
-                    var count = LykkehjulLogic.countLetterInWord('x', wordToGuess)
+                    var count = countLetterInWord('x', wordToGuess)
 
                     points += count*tempPoint
                 }
@@ -511,11 +507,11 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                 val letterIndex = getLetterIndex(wordToGuess, 'y')
                 if (letterIndex != -1) {
 
-                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('y', temp, letterIndex)
+                    var newWord = placeLetterInWordByIndex('y', temp, letterIndex)
                     adapter.data = newWord.toCharArray()
                     adapter.notifyDataSetChanged()
 
-                    var count = LykkehjulLogic.countLetterInWord('y', wordToGuess)
+                    var count = countLetterInWord('y', wordToGuess)
 
                     points += count*tempPoint
                 }
@@ -529,11 +525,11 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                 val letterIndex = getLetterIndex(wordToGuess, 'z')
                 if (letterIndex != -1) {
 
-                    var newWord = LykkehjulLogic.placeLetterInWordByIndex('z', temp, letterIndex)
+                    var newWord = placeLetterInWordByIndex('z', temp, letterIndex)
                     adapter.data = newWord.toCharArray()
                     adapter.notifyDataSetChanged()
 
-                    var count = LykkehjulLogic.countLetterInWord('z', wordToGuess)
+                    var count = countLetterInWord('z', wordToGuess)
 
                     points += count*tempPoint
                 }
@@ -587,6 +583,24 @@ class GameFragment : Fragment(R.layout.fragment_game) {
                 return index
         }
         return -1
+    }
+
+    fun placeLetterInWordByIndex(letter: Char, word: String, index: Int): String {
+
+        val chars = word.toCharArray()
+
+        chars[index] = letter
+        return String(chars)
+    }
+
+    fun countLetterInWord(letter: Char, word: String): Int {
+        var count = 0
+        for (i in 0..word.length - 1) {
+            if (letter == word[i]) {
+                count = +1
+            }
+        }
+        return count
     }
 
 }
